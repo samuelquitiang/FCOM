@@ -36,7 +36,7 @@ void Particle::SetValues(float x,float y,float z,float vx,float vy, float vz,flo
    Y=Y+(VY*t)+(0.5*ay*t*t);
    Z=Y+(VZ*t)+(0.5*az*t*t);
 
-   VX=VX +(t*0.5*(ax+AX));
+   VX=VX +(t*0.5*(ax+AX)); 
    VY=VY +(t*0.5*(ay+AZ));
    VZ=VZ +(t*0.5*(az+AZ));
 

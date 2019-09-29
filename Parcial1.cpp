@@ -268,23 +268,15 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 	    int n_vecinos0 = analizarvecinos0(f,c);  // Defino los nuevos vecinos llamando la función anterior.
 	    int n_vecinos1 = analizarvecinos1(f,c);
 	    int n_vecinos2 = analizarvecinos2(f,c);
-
-	    if(n_vecinos >= n_vecinos2)
+	    if(matriz[f][c] == 0)               // Elemento con valor 0
 	      {
-
-		if(matriz[f][c] == 0)               // Elemento con valor 0
-		  {
-		    if(vecinos1 == 3 && vecinos0 >= 2)  // Condición de que si hay 3 vecinos con valor 1 y 2 o más con valor 0 
+		if(vecinos1 == 3 && vecinos0 >= 2)  // Condición de que si hay 3 vecinos con valor 1 y 2 o más con valor 0
 		  {
 		    nuevo[f][c] = 1;                // Su valor cambia a 1.
 		  }
-		if(vecinos2 == 4 && vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0 
+		else if(vecinos2 == 4 && vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0
 		  {
 		    nuevo[f][c] = 2;                // Su valor cambia a 1.
-		  }
-		else                               // Si no se cumplen ninguna de las condiciones
-		  {
-		    nuevo[f][c] = 0;               // Quedese como estaba.
 		  }
 	      }
 	    if (matriz[f][c] == 1)                 // Elemento con valor 1.
@@ -293,13 +285,16 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  {
 		    nuevo[f][c] = 1;               // conserve su valor de 1.
 		  }
-		if(vecinos2 <=4 && vecinos1 == 1)  // Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
+		else
 		  {
-		    nuevo[f][c] = 2;               // Su valor cambia a 2.
-		  }
-		if(vecinos1 <=5)                   // Condición de que si tiene al menos 5 vecinos con valor 1
-		  {
-		    nuevo[f][c] = 0;               // Su valor cambia a 0.
+		    if(vecinos2 <=4 && vecinos1 == 1)  // Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
+		      {
+			nuevo[f][c] = 2;               // Su valor cambia a 2.
+		      }
+		    else if(vecinos1 <=5)                   // Condición de que si tiene al menos 5 vecinos con valor 1
+		      {
+			nuevo[f][c] = 0;               // Su valor cambia a 0.
+		      }
 		  }
 	      }
 	    if (matriz[f][c] == 2)                 // Elemento con valor 2.
@@ -308,13 +303,16 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  {
 		    nuevo[f][c] = 2;               // Conserve su valor 2.
 		  }
-		if (vecinos1 == 4 || vecinos1 == 5 && vecinos2==1) // Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
+		else
 		  {
-		    nuevo[f][c] = 1;               // Su valor cambia a 1.
-		  }
-		if(vecinos2 == 5)                  // COndición de tener 5 vecinos con valor de 2
-		  {
-		    nuevo[f][c] = 0;               // Su valor cambia a 0
+		    if(vecinos1 == 4 || vecinos1 == 5 && vecinos2==1) // Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
+		      {
+			nuevo[f][c] = 1;               // Su valor cambia a 1.
+		      }
+		    else if(vecinos2 == 5)                  // COndición de tener 5 vecinos con valor de 2
+		      {
+			nuevo[f][c] = 0;               // Su valor cambia a 0
+		      }
 		  }
 	      }
 	  }

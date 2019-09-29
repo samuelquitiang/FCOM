@@ -1,7 +1,7 @@
 #include <iostream> //Se incluye libreria para entrada y salida de datos
 #include <vector> //Se incluye libreria para manejo de vectores
-#include <cstdlib>
-#include <unistd.h>
+#include <cstdlib>  // Se incluye la libreria estandar de propósito deneral de C.
+#include <unistd.h> // Se incluye la libreria que define constantes, tipos y funciones.
 using namespace std; //Esta linea sirve para no tener que llamar cada vez a iostream
 
 class Matriz   //Defino la clase Matriz, que va a ser la encargada de generar la matriz nxn.
@@ -128,7 +128,7 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Funcion que analiza s
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-  return vecinos0;
+  return vecinos0;  // Devuelve el número de vecinos con valor 0.
 }
 
 
@@ -139,7 +139,7 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Funcion entera que an
     {
       if(matriz[posf-1][posc-1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;   // Si tiene valor de 1 añade uno al contador.
 	}
     }
   if(posf-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc) esta dentro de la matriz (existe)
@@ -191,7 +191,7 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Funcion entera que an
 	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
-  return vecinos1;
+  return vecinos1;    // Devuelve el número de vecinos con valor 1
 }
 
 int Matriz::analizarvecinos2(int posf, int posc) //Se define define una funcion entera que analiza si los vecinos tienen valor 2 
@@ -253,7 +253,7 @@ int Matriz::analizarvecinos2(int posf, int posc) //Se define define una funcion 
           vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
-  return vecinos2;
+  return vecinos2;     // Devuelve el número de vecinos con valor 2.
 
 }
 
@@ -273,7 +273,7 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  {
 		    nuevo[f][c] = 1;                // Su valor cambia a 1.
 		  }
-		else if(n_vecinos2 == 4 and n_vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0
+		else if(n_vecinos2 == 4 and n_vecinos1 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 1
 		  {
 		    nuevo[f][c] = 2;                // Su valor cambia a 2.
 		  }
@@ -286,7 +286,7 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  }
 		else   //Si no se cumple alguna condicion anterior pasa a esta
 		  {
-		    if(n_vecinos2 <=4 and n_vecinos1 == 1)  // Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
+		    if(n_vecinos2 <=4 and n_vecinos1 == 1)// Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
 		      {
 			nuevo[f][c] = 2;               // Su valor cambia a 2.
 		      }
@@ -304,7 +304,7 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  }
 		else //Si no se cumple alguna condicion anterior pasa a esta
 		  {
-		    if(n_vecinos1 == 4 || n_vecinos1 == 5 and n_vecinos2==1) // Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
+		    if(n_vecinos1 == 4 || n_vecinos1 == 5 and n_vecinos2==1)// Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
 		      {
 			nuevo[f][c] = 1;               // Su valor cambia a 1.
 		      }
@@ -324,7 +324,7 @@ int main()        // Comienza la función principal
 {
   srand(time(NULL));  // Hace uso del reloj interno del computador para cambiar el valor inicial para generar una secuancia de números
                       // enteros semi-aleatorios.
-  int N = 6;
+  int N = 30;
   /*cout << "Ingrese el tamaño de la matriz : " << endl;
   cin >> N;
   */
@@ -335,7 +335,7 @@ A.MkMatriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
     {
       A.Mostrar();
 	cout << A.matriz[N/2][N/2];  
-      usleep(100000);
+      usleep(10);
       system("clear");
     A.ciclo();
     }

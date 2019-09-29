@@ -334,11 +334,11 @@ A.MkMatriz(N,N); // Le da el tamaÃ±o a la matriz con el valor que ingresemos.
 
  int t=0;
 	
-   while(t<= 100)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuraciÃ³n.
+   while(t<= 1000)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuraciÃ³n.
     {
        A.Mostrar();
 	//cout << A.matriz[N/2][N/2];  
-      usleep(1000);
+      usleep(10000);
       system("clear");
       A.ciclo();
     t++;

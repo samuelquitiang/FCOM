@@ -264,33 +264,33 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
       {
 	for (int c=0; c<columnas; c++)    // Ciclo que recorre todas las columnas.
 	  {
-	    int n_vecinos0 = analizarvecinos0(f,c);  // Defino los nuevos vecinos llamando la función anterior.
-	    int n_vecinos1 = analizarvecinos1(f,c);
-	    int n_vecinos2 = analizarvecinos2(f,c);
+	    int n_vecinos0 = analizarvecinos0(f,c);  // Se define los nuevos vecinos con valor 0 llamando la función anterior.
+	    int n_vecinos1 = analizarvecinos1(f,c);  // Se define los nuevos vecinos con valor 0 llamando la función anterior.
+	    int n_vecinos2 = analizarvecinos2(f,c); // Se define los nuevos vecinos con valor 0 llamando la función anterior.
 	    if(matriz[f][c] == 0)               // Elemento con valor 0
 	      {
-		if(vecinos1 == 3 and vecinos0 >= 2)  // Condición de que si hay 3 vecinos con valor 1 y 2 o más con valor 0
+		if(n_vecinos1 == 3 and n_vecinos0 >= 2)  // Condición de que si hay 3 vecinos con valor 1 y 2 o más con valor 0
 		  {
 		    nuevo[f][c] = 1;                // Su valor cambia a 1.
 		  }
-		else if(vecinos2 == 4 and vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0
+		else if(n_vecinos2 == 4 and n_vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0
 		  {
-		    nuevo[f][c] = 2;                // Su valor cambia a 1.
+		    nuevo[f][c] = 2;                // Su valor cambia a 2.
 		  }
 	      }
 	    if (matriz[f][c] == 1)                 // Elemento con valor 1.
 	      {
-		if(vecinos1 == 2 || vecinos1 == 3) // Condición de que si tiene 2 o 3 vecinos con valor 1
+		if(n_vecinos1 == 2 || n_vecinos1 == 3) // Condición de que si tiene 2 o 3 vecinos con valor 1
 		  {
 		    nuevo[f][c] = 1;               // conserve su valor de 1.
 		  }
-		else
+		else   //Si no se cumple alguna condicion anterior pasa a esta
 		  {
-		    if(vecinos2 <=4 and vecinos1 == 1)  // Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
+		    if(n_vecinos2 <=4 and n_vecinos1 == 1)  // Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
 		      {
 			nuevo[f][c] = 2;               // Su valor cambia a 2.
 		      }
-		    else if(vecinos1 <=5)                   // Condición de que si tiene al menos 5 vecinos con valor 1
+		    else if(n_vecinos1 <=5)                   // Condición de que si tiene al menos 5 vecinos con valor 1
 		      {
 			nuevo[f][c] = 0;               // Su valor cambia a 0.
 		      }
@@ -298,17 +298,17 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 	      }
 	    if (matriz[f][c] == 2)                 // Elemento con valor 2.
 	      {
-		if(vecinos2 == 2 || vecinos2 == 3) // Condición de que si tiene 2 o 3 vecinos con valor 2
+		if(n_vecinos2 == 2 || n_vecinos2 == 3) // Condición de que si tiene 2 o 3 vecinos con valor 2
 		  {
 		    nuevo[f][c] = 2;               // Conserve su valor 2.
 		  }
-		else
+		else //Si no se cumple alguna condicion anterior pasa a esta
 		  {
-		    if(vecinos1 == 4 || vecinos1 == 5 and vecinos2==1) // Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
+		    if(n_vecinos1 == 4 || n_vecinos1 == 5 and n_vecinos2==1) // Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
 		      {
 			nuevo[f][c] = 1;               // Su valor cambia a 1.
 		      }
-		    else if(vecinos2 == 5)                  // COndición de tener 5 vecinos con valor de 2
+		    else if(n_vecinos2 == 5)                  // COndición de tener 5 vecinos con valor de 2
 		      {
 			nuevo[f][c] = 0;               // Su valor cambia a 0
 		      }
@@ -316,7 +316,7 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 	      }
 	  }
       }
-  matriz = nuevo;
+  matriz = nuevo; //Actualiza la matriz a su nuevo estado 
 }
 
 
@@ -332,7 +332,8 @@ int main()        // Comienza la función principal
 
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
-      matriz.Mostrar();
+      //matriz.Mostrar();
+	cout << matriz[N/2,N/2];  
       usleep(100000);
       system("clear");
       matriz.ciclo();

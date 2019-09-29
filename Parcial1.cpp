@@ -335,7 +335,7 @@ int main()        // Comienza la función principal
     {
       matriz.Mostrar();
       usleep(100);
-      system("cls");
+      system("clear");
       matriz.ciclo();
     }
 

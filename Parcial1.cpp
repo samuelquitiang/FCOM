@@ -328,13 +328,13 @@ int main()        // Comienza la función principal
   /*cout << "Ingrese el tamaño de la matriz : " << endl;
   cin >> N;
   */
-  Matriz matriz; // Le da el tamaño a la matriz con el valor que ingresemos.
-matriz.MkMatriz(N,N);
+  Matriz A; //Inicia la clase Matriz para la variable A
+A.MkMatriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
 	
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
       matriz.Mostrar();
-	//cout << matriz[N/2][N/2];  
+	cout << matriz[N/2][N/2];  
       usleep(100000);
       system("clear");
       matriz.ciclo();

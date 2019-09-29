@@ -333,9 +333,8 @@ matriz.MkMatriz(N,N);
 	
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
-      //matriz.Mostrar();
-	 
-	cout << matriz[N/2][N/2];  
+      matriz.Mostrar();
+	//cout << matriz[N/2][N/2];  
       usleep(100000);
       system("clear");
       matriz.ciclo();

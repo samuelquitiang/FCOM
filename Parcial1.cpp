@@ -72,7 +72,126 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.
 {
   vecinos1 = 0;               // Para inicializar los vecinos que tengan valor 0.
- 
+  if(posf-1 >=0 && posc-1 >= 0)
+    {
+      if(matriz[posf-1][posc-1] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  if(posf-1 >= 0)
+    {
+      if(matriz[posf-1][posc] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  if(posf-1 >= 0 && posc+1 <= columnas-1)
+    {
+      if(matriz[posf-1][posc+1] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  if(posc-1 >= 0)
+    {
+      if(matriz[posf][posc-1] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  if(posc+1 <= columnas -1)
+    {
+      if(matriz[posf][posc+1] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  if(posf+1 <= filas-1 && posc-1 >= 0)
+    {
+      if(matriz[posf+1][posc-1] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  if(posf+1 <= filas-1)
+    {
+      if(matriz[posf+1][posc] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  if(posf+1 <= filas-1 && posc+1 <= columnas-1)
+    {
+      if(matriz[posf+1][posc+1] == 1)
+	{
+	  vecinos1++;
+	}
+    }
+  return vecinos1;
+}
+
+int Matriz::analizarvecinos2(int posf, int posc)
+{
+  vecinos2 = 0;               // Para inicializar los vecinos que tengan valor 0.                                                              
+  if(posf-1 >=0  && posc-1 >= 0)
+    {
+      if(matriz[posf-1][posc-1] == 2)
+        {
+          vecinos2++;
+        }
+    }
+  if(posf-1 >= 0)
+    {
+      if(matriz[posf-1][posc] == 2)
+        {
+          vecinos2++;
+        }
+    }
+  if(posf-1 >= 0 && posc+1 <= columnas-1)
+    {
+      if(matriz[posf-1][posc+1] == 2)
+        {
+          vecinos2++;
+	}
+    }
+  if(posc-1 >= 0)
+    {
+      if(matriz[posf][posc-1] == 2)
+        {
+          vecinos2++;
+        }
+    }
+  if(posc+1 <= columnas -1)
+    {
+      if(matriz[posf][posc+1] == 2)
+        {
+          vecinos2++;
+        }
+    }
+  if(posf+1 <= filas-1 && posc-1 >= 0)
+    {
+      if(matriz[posf+1][posc-1] == 2)
+        {
+          vecinos2++;
+        }
+    }
+  if(posf+1 <= filas-1)
+    {
+      if(matriz[posf+1][posc] == 2)
+        {
+          vecinos2++;
+        }
+    }
+  if(posf+1 <= filas-1 && posc+1 <= columnas-1)
+    {
+      if(matriz[posf+1][posc+1] == 2)
+        {
+          vecinos2++;
+        }
+    }
+  return vecinos2;
+
 }
 
 void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.

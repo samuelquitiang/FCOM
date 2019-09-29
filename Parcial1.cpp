@@ -325,7 +325,11 @@ int main()        // Comienza la función principal
 {
   srand(time(NULL));  // Hace uso del reloj interno del computador para cambiar el valor inicial para generar una secuancia de números
                       // enteros semi-aleatorios.
-  Matriz matriz(5,5); // Le da el tamaño a la matriz con el valor que ingresemos.
+  int N;
+  cout << "Ingrese el tamaño de la matriz : " << endl;
+  cin >> N;
+  
+  Matriz matriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
 
   while(1)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {

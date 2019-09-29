@@ -73,7 +73,7 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.                                 
 {
   vecinos0 = 0;               // Para inicializar los vecinos que tengan valor 1.                                                              
-  if(posf-1 >=0 && posc-1 >= 0)
+  if(posf-1 >=0 and posc-1 >= 0)
     {
       if(matriz[posf-1][posc-1] == 0)
         {
@@ -87,7 +87,7 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los p
           vecinos0++;
         }
     }
-  if(posf-1 >= 0 && posc+1 <= columnas-1)
+  if(posf-1 >= 0 and posc+1 <= columnas-1)
     {
       if(matriz[posf-1][posc+1] == 0)
         {
@@ -108,7 +108,7 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los p
           vecinos0++;
         }
     }
-   if(posf+1 <= filas-1 && posc-1 >= 0)
+   if(posf+1 <= filas-1 and posc-1 >= 0)
     {
       if(matriz[posf+1][posc-1] == 0)
         {
@@ -122,7 +122,7 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los p
           vecinos0++;
         }
     }
-  if(posf+1 <= filas-1 && posc+1 <= columnas-1)
+  if(posf+1 <= filas-1 and posc+1 <= columnas-1)
     {
       if(matriz[posf+1][posc+1] == 0)
         {
@@ -136,7 +136,7 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los p
 int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.
 {
   vecinos1 = 0;               // Para inicializar los vecinos que tengan valor 1.
-  if(posf-1 >=0 && posc-1 >= 0)
+  if(posf-1 >=0 and posc-1 >= 0)
     {
       if(matriz[posf-1][posc-1] == 1)
 	{
@@ -150,7 +150,7 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los p
 	  vecinos1++;
 	}
     }
-  if(posf-1 >= 0 && posc+1 <= columnas-1)
+  if(posf-1 >= 0 and posc+1 <= columnas-1)
     {
       if(matriz[posf-1][posc+1] == 1)
 	{
@@ -171,7 +171,7 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los p
 	  vecinos1++;
 	}
     }
-  if(posf+1 <= filas-1 && posc-1 >= 0)
+  if(posf+1 <= filas-1 and posc-1 >= 0)
     {
       if(matriz[posf+1][posc-1] == 1)
 	{
@@ -185,7 +185,7 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los p
 	  vecinos1++;
 	}
     }
-  if(posf+1 <= filas-1 && posc+1 <= columnas-1)
+  if(posf+1 <= filas-1 and posc+1 <= columnas-1)
     {
       if(matriz[posf+1][posc+1] == 1)
 	{
@@ -198,7 +198,7 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los p
 int Matriz::analizarvecinos2(int posf, int posc)
 {
   vecinos2 = 0;               // Para inicializar los vecinos que tengan valor 2.                                                              
-  if(posf-1 >=0  && posc-1 >= 0)
+  if(posf-1 >=0  and posc-1 >= 0)
     {
       if(matriz[posf-1][posc-1] == 2)
         {
@@ -212,7 +212,7 @@ int Matriz::analizarvecinos2(int posf, int posc)
           vecinos2++;
         }
     }
-  if(posf-1 >= 0 && posc+1 <= columnas-1)
+  if(posf-1 >= 0 and posc+1 <= columnas-1)
     {
       if(matriz[posf-1][posc+1] == 2)
         {
@@ -233,7 +233,7 @@ int Matriz::analizarvecinos2(int posf, int posc)
           vecinos2++;
         }
     }
-  if(posf+1 <= filas-1 && posc-1 >= 0)
+  if(posf+1 <= filas-1 and posc-1 >= 0)
     {
       if(matriz[posf+1][posc-1] == 2)
         {
@@ -247,7 +247,7 @@ int Matriz::analizarvecinos2(int posf, int posc)
           vecinos2++;
         }
     }
-  if(posf+1 <= filas-1 && posc+1 <= columnas-1)
+  if(posf+1 <= filas-1 and posc+1 <= columnas-1)
     {
       if(matriz[posf+1][posc+1] == 2)
         {
@@ -270,11 +270,11 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 	    int n_vecinos2 = analizarvecinos2(f,c);
 	    if(matriz[f][c] == 0)               // Elemento con valor 0
 	      {
-		if(vecinos1 == 3 && vecinos0 >= 2)  // Condición de que si hay 3 vecinos con valor 1 y 2 o más con valor 0
+		if(vecinos1 == 3 and vecinos0 >= 2)  // Condición de que si hay 3 vecinos con valor 1 y 2 o más con valor 0
 		  {
 		    nuevo[f][c] = 1;                // Su valor cambia a 1.
 		  }
-		else if(vecinos2 == 4 && vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0
+		else if(vecinos2 == 4 and vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0
 		  {
 		    nuevo[f][c] = 2;                // Su valor cambia a 1.
 		  }
@@ -287,7 +287,7 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  }
 		else
 		  {
-		    if(vecinos2 <=4 && vecinos1 == 1)  // Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
+		    if(vecinos2 <=4 and vecinos1 == 1)  // Condición de que si tiene al menos 4 vecinos con valor dos y 1 vecino con valor 1
 		      {
 			nuevo[f][c] = 2;               // Su valor cambia a 2.
 		      }
@@ -305,7 +305,7 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  }
 		else
 		  {
-		    if(vecinos1 == 4 || vecinos1 == 5 && vecinos2==1) // Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
+		    if(vecinos1 == 4 || vecinos1 == 5 and vecinos2==1) // Condición de tener 4 o 5 vecinos con valor 1 y uno con valor 2.
 		      {
 			nuevo[f][c] = 1;               // Su valor cambia a 1.
 		      }

@@ -337,7 +337,7 @@ A.MkMatriz(N,N); // Le da el tamaÃ±o a la matriz con el valor que ingresemos.
    while(t<= 1000)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuraciÃ³n.
     {
        A.Mostrar();
-      //usleep(100000);	
+      usleep(1000000);	
       system("clear");
       A.ciclo();
     t++;

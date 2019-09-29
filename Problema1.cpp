@@ -1,3 +1,10 @@
+/* 
+Parcial 1
+Elizabeth Jiménez Gómez 1036401107
+Samuel Quitian Gallego 1152222545
+*/
+
+
 #include <iostream> //Se incluye libreria para entrada y salida de datos
 #include <vector> //Se incluye libreria para manejo de vectores
 #include <unistd.h> // Se incluye libreria que define constantes, tipos y funciones.
@@ -16,7 +23,7 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   vector<vector<int> > matriz; // Definimos el vector que se va a convertir en la matriz nxn.
 
   void MkMatriz(int, int);            //Defino la matriz donde sus entradas son f=filas, c=columnas.
-  int analizarvecinos0(int posf,int posc);  //Función entera que analiza los vecinos con valor 0 para una posicion (posf,pos)                                   
+  int analizarvecinos0(int posf,int posc);  //Función entera que analiza los vecinos con valor 0 para una posicion (posf,pos)       
   int analizarvecinos1(int posf, int posc); //Función entera que analiza los vecinos con valor 1 para una posicion (posf,posc)
   int analizarvecinos2(int posf, int posc);//Función entera que analiza los vecinos con valor 2 para una posicion (posf,posc)
   void Mostrar();                  //Definimos una función que muestre en pantalla la organización de las células.

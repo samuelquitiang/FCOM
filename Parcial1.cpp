@@ -12,13 +12,13 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   int vecinos0; // Definimos los vecinos que tienen valor 0.
   int vecinos1; // Definimos los vecinos que tienen valor 1.
   int vecinos2; // Definimos los vecinos que tienen valor 2.
-  int vivos1;   // Definimos las especies vivas de la célula 1.
-  int vivos2;   // Definimos las especies vivas de la célula 2.
-  vector <vector<int> > matriz; // Definimos el vector que se va a convertir en la matriz nxn.
+  
+  vector<vector<int> > matriz; // Definimos el vector que se va a convertir en la matriz nxn.
 
   Matriz(int f, int c);            //Defino la matriz donde sus entradas son f=filas, c=columnas.
-  int analizarvecinos(posf,posc);  // Definimos una función entera que analiza las posiciones de los vecinos, si estan en
+  int analizarvecinos1(int posf,int posc);  // Definimos una función entera que analiza las posiciones de los vecinos, si estan en
                                       //filas (posf) y si estan en columnas (posc).
+  int analizarvecinos2(int posf, int posc);
   void Mostrar();                  //Definimos una función que muestre en pantalla la organización de las células.
   void ciclo();                    //Definimos una función que hace evolucionar el sistema.
 };
@@ -53,7 +53,7 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 	    {
 	      cout << "* ";            // Muestre en pantalla "*"
 	    }
-	  if (matriz[f][c] == 2)       // Si esta viva una célula de la especie 2
+	  else if (matriz[f][c] == 2)       // Si esta viva una célula de la especie 2
 	    {
 	      cout << "# ";            // Muestre en pantalla "#"
 	    }
@@ -69,120 +69,20 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 // Hasta aquí hemos definido la clase que contiene la matriz nxn. En lo que sigue definiremos los métodos que la hacen evolucionar
 // de acuerdo a las reglas estipuladas.
 
-int Matriz::analizarvecinos(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.
+int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.
 {
-  vecinos0 = 0;               // Para inicializar los vecinos que tengan valor 0.
-  vecinos1 = 0;               // Para inicializar los vecinos que tengan valor 1.
-  vecinos2 = 0;               // Para inicializar los vecinos que tengan valor 2.
-
-  // Empezamos a definir los valores que puede tomar cada uno de los vecinos al rededor del elemento [posf,posc]
-  if (matriz[posf-1][posc-1] == 0)      // Si el elemento de la diagonal superior izquierda [i-1,j-1] = 0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if (matriz[posf-1][posc-1] == 1)       // Si el elemento de la diagonal superior izquierda es igual a 1
-    {
-      vecinos1++;                        // Le suma 1 al vecino con valor 1.
-    }
-  else if(matriz[posf-1][posc-1] == 2)  // Si por el contrario el valor es 2
-    {
-      vecinos2++;                       // Le suma 1 al vecino con valor 2.
-    }
-  if (matriz[posf-1][posc] == 0)        // Si el elemento de arriba [i-1,j] = 0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if(matriz[posf-1][posc] == 1)         // Si el elemento de arriba es igual a 1 
-    {
-      vecinos1++;                       // Le suma 1 al vecino con valor 1.
-    }
-   else if(matriz[posf-1][posc] == 2)  // Si por el contrario el valor es 2                                                                
-    {
-      vecinos2++;                        // Le suma 1 al vecino con valor 2.
-    }
-  if (matriz[posf-1][posc+1] == 0)      // Si el elemento de la diagonal superior derecha [i-1,j+1]=0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if(matriz[posf-1][posc+1] == 1)       // Si el elemento de la diagonal superior derecha es 1
-    {
-      vecinos1++;                       // Le suma 1 al vecino con valor 1.
-    }
-   else if(matriz[posf-1][posc+1] == 2)  // Si por el contrario el valor es 2                                                                
-    {
-      vecinos2++;                         // Le suma 1 al vecino con valor 2.
-    }
-  if (matriz[posf][posc+1] == 0)        // Si el elemento de la derecha [i,j+1]=0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if (matriz[posf][posc+1] == 1)        // Si el elemento de la derecha es igual a 1
-    {
-      vecinos1++;                       // Le suma 1 al vecino con valor 1.
-    }
-   else if(matriz[posf][posc+1] == 2)  // Si por el contrario el valor es 2                                                                 
-    {
-      vecinos2++;                        // Le suma 1 al vecino con valor 2.
-    }
-  if (matriz[posf+1][posc+1] == 0)      // Si el elemento de la diagonal inferior derecha [i+1,j+1]=0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if(matriz[posf+1][posf+1] == 1)       // Si el elemento de la diagonal inferior derecha es 1
-    {
-      vecinos1++;                       // Le suma 1 al vecino con valor 1.
-    }
-   else if(matriz[posf+1][posc+1] == 2)  // Si por el contrario el valor es 2                                                                 
-    {
-      vecinos2++;                        // Le suma 1 al vecino con valor 2.
-    }
-  if (matriz[posf+1][posc] == 0)        // Si el elemento de abajo [i+1,j]=0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if(matriz[posf+1][posc] == 1)    // Si el elemento de abajo es igual a 1
-    {
-      vecinos1++;                       // Le suma 1 al vecino con valor 1.
-    }
-   else if(matriz[posf+1][posc] == 2)  // Si por el contrario el valor es 2                                                                 
-    {
-      vecinos2++;                        // Le suma 1 al vecino con valor 2.
-    }
-  if(matriz[posf+1][posc-1] == 0)       // Si el elemento de la diagonal inferior derecha [i+1,j-1]=0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if(matriz[posf+1][posc-1] == 1)  // Si el elemento de la diagonal inferior izquierda es igual a 1
-    {
-      vecinos1++;                       // Le suma 1 al vecino con valor 1.
-    }
-   else if(matriz[posf+1][posc-1] == 2)  // Si por el contrario el valor es 2                                                                 
-    {
-      vecinos2++;                         // Le suma 1 al vecino con valor 2.
-    }
-  if (matriz[posf][posc-1] == 0)        // Si el elemento de la izquierda [i,j-1]=0
-    {
-      vecinos0++;                       // Le suma 1 al vecino con valor 0.
-    }
-  if(matriz[posf][posc-1] == 1)    // Si el elemento de la izquierda es igual a 1
-    {
-      vecinos1++;                       // Le suma 1 al vecino con valor 1.
-    }
-   else if(matriz[posf][posc-1] == 2)  // Si por el contrario el valor es 2                                                                 
-    {
-      vecinos2++;                      // Le suma 1 al vecino con valor 2.
-    }
-  return vecinos0, vecinos1, vecinos2;
+  vecinos1 = 0;               // Para inicializar los vecinos que tengan valor 0.
+ 
 }
 
-void Matriz::ciclo():       // Aquí definimos las reglas estipuladas.
+void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 {
-  vector <vector<int> > nuevo = matriz    // Definimos una nueva matriz despues de evolucionar.
+  vector <vector<int> > nuevo = matriz;    // Definimos una nueva matriz despues de evolucionar.
     for (int f=0; f<filas; f++)           // Ciclo que recorre todas las filas.
       {
 	for (int c=0; c<columnas; c++)    // Ciclo que recorre todas las columnas.
 	  {
-	    int vecinos = analizarvecinos(f,c)  // Defino los nuevos vecinos llamando la función anterior.
+	    int vecinos = analizarvecinos(f,c);  // Defino los nuevos vecinos llamando la función anterior.
 
 	    if(matriz[f][c] == 0)               // Elemento con valor 0
 	      {
@@ -235,7 +135,18 @@ void Matriz::ciclo():       // Aquí definimos las reglas estipuladas.
 }
 
 
-int main()
+int main()        // Comienza la función principal
 {
+  srand(time(NULL));  // Hace uso del reloj interno del computador para cambiar el valor inicial para generar una secuancia de números
+                      // enteros semi-aleatorios.
+  Matriz matriz(5,5); // Le da el tamaño a la matriz con el valor que ingresemos.
+
+  while(1)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
+    {
+      matriz.Mostrar();
+      usleep(10);
+      system("clear");
+      matriz.ciclo();
+    }
 
 }

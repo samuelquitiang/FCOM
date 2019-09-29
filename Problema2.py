@@ -154,6 +154,7 @@ ax2.semilogy(Totalt[1],DiffRn1[1],'b--',label='Diff RK-n1')     # Evolución tem
 ax2.semilogy(Totalt[1],DiffRn2[1],'m--',label='Diff RK_n2')     # Evolución temporal del error del gas 2 con RK4.
 ax2.set_ylabel('diff')        # Nombre del eje y.
 ax2.set_xlabel('t(s)')        # Nombre del eje x.
+ax2.set_title('tiempo vs Error') #Titulo del grafico
 ax2.legend()                  # Da "sentido" a la visualización.
 
 

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Sep 28 12:35:11 2019
-
-@author: Samuel
+Parcial 1
+Samuel Quitian Gallego 1152222545
+Elizabeth Jiménez Gómez 1036401107
 """
 
 import numpy as np                   #Para calculos
@@ -126,7 +126,7 @@ ax0.plot(Totalns1[2],Totalns2[2],'b--',label='odeint')            #Evolución de
 ax0.set_ylabel('n1')        # Nombre del eje y.                           
 ax0.set_xlabel('n2')        # Nombre del eje x.
 ax0.set_title('n1 vs n2')   # Titulo del gráfico.
-ax0.legend()                # Da "sentido" a la visualización
+ax0.legend()                # Permite que aprezcan los nombres de los ejes y el título
 plt.figure()                # Prepara el espacio de graficación.
 
 ax1=plt.subplot()  # Grafica el tiempo contra la evolución de cada gas mostrando como varia en el intervalo temporal.
@@ -142,7 +142,7 @@ ax1.plot(Totalt[2],Totalns2[2],'b--',label='Odeint-n2') # Evolución del gas 2 p
 ax1.set_ylabel('a.u')                        #Nombre del eje y.
 ax1.set_xlabel('t(s)')                       #Nombre del eje x.
 ax1.set_title('tiempo vs cantidad del gas')  #Titulo de la grafica.
-ax1.legend()                                 # Da "sentido" a la visualización.
+ax1.legend()                                 #Permite que aparezcan los nombres de los ejes y el título.
     
 
 ax2=plt.subplot(121)     # Grafica los errores de los métodos.
@@ -155,7 +155,7 @@ ax2.semilogy(Totalt[1],DiffRn2[1],'m--',label='Diff RK_n2')     # Evolución tem
 ax2.set_ylabel('diff')        # Nombre del eje y.
 ax2.set_xlabel('t(s)')        # Nombre del eje x.
 ax2.set_title('tiempo vs Error') #Titulo del grafico
-ax2.legend()                  # Da "sentido" a la visualización.
+ax2.legend()                  # Permite que aparezcan los nombres de los ejes y el título.
 
 
 ax3=plt.subplot(122)      #Grafica las diferencias promedio con respecto al paso, lo que nos habla de la convergencia de los métodos.
@@ -167,7 +167,7 @@ ax3.plot(h,DifRP2,'m--',label='Error-paso. euler-n1' )  # Convergencia de RK4 pa
 ax3.set_ylabel('Prom-err')        # Nombre del eje y.
 ax3.set_xlabel('Paso')            # Nombre del eje x.
 ax3.set_title('Paso vs Err')      # Titulo del grafico.
-ax3.legend()                      # Da "sentido" a la visualización.
+ax3.legend()                      # Permite que aparezcan los nombres de los ejes y el título.
 
 #de esta ultima grafica se puede ver que las soluciones convergen 
-plt.show()
+plt.show() # Para que muestre las gráficas.

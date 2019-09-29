@@ -23,7 +23,7 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   void ciclo();                    //Definimos una función que hace evolucionar el sistema.
 };
 
-void Matriz::Matriz(int f, int c)  // Creamos una instancia de la clase que forme una matriz de números aleatorios.
+void Matriz::MkMatriz(int f, int c)  // Creamos una instancia de la clase que forme una matriz de números aleatorios.
 {
   filas = f;              // Redefinimos el nombre de las filas.
   columnas = c;           // Redefinimos el nombre de las columnas.

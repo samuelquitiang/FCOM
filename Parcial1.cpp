@@ -16,8 +16,9 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   vector<vector<int> > matriz; // Definimos el vector que se va a convertir en la matriz nxn.
 
   Matriz(int f, int c);            //Defino la matriz donde sus entradas son f=filas, c=columnas.
-  int analizarvecinos1(int posf,int posc);  // Definimos una función entera que analiza las posiciones de los vecinos, si estan en
+  int analizarvecinos0(int posf,int posc);  // Definimos una función entera que analiza las posiciones de los vecinos, si estan en
                                       //filas (posf) y si estan en columnas (posc).
+  int analizarvecinos1(int posf, int posc);
   int analizarvecinos2(int posf, int posc);
   void Mostrar();                  //Definimos una función que muestre en pantalla la organización de las células.
   void ciclo();                    //Definimos una función que hace evolucionar el sistema.

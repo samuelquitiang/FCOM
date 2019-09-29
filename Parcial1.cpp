@@ -62,7 +62,7 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 	      cout << " . ";             // Muestre en pantalla "."
 	    }
 	}
-      cout << "\n";                    // Deje un espacio a la hora de mostrar en pantalla.
+      cout << endl;                    // Deje un espacio a la hora de mostrar en pantalla.
     }
 }
 
@@ -334,7 +334,7 @@ A.MkMatriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
       A.Mostrar();
-	cout << A.matriz[N/2][N/2];  
+	//cout << A.matriz[N/2][N/2];  
       usleep(100);
       system("clear");
     A.ciclo();

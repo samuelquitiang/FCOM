@@ -45,21 +45,21 @@ void Matriz::MkMatriz(int f, int c)  // Creamos una instancia de la clase que fo
 
 void Matriz::Mostrar()                 // Creamos una instancia de la clase que muestra en pantalla la forma de la matriz
 {
-  for (int f=0; f<filas; f++)          // Ciclo que recorre las filas.
+  for (int a=0; a<filas; a++)          // Ciclo que recorre las filas.
     {
-      for (int c; c<columnas; c++)     // Ciclo que recorre las columnas.
+      for (int b; b<columnas; b++)     // Ciclo que recorre las columnas.
 	{
-	  if (matriz[f][c] == 1)       // Si esta viva una célula de la especie 1
+	  if (matriz[a][b] == 1)       // Si esta viva una célula de la especie 1
 	    {
 	      cout << "*";            // Muestre en pantalla "*"
 	    }
-	  else if (matriz[f][c] == 2)       // Si esta viva una célula de la especie 2
+	  else if (matriz[a][b] == 2)       // Si esta viva una célula de la especie 2
 	    {
 	      cout << " # ";            // Muestre en pantalla "#"
 	    }
 	  else                         // Si la célula esta muerta
 	    {
-	      cout << " . ";             // Muestre en pantalla "."
+	      cout << "  ";             // Muestre en pantalla "."
 	    }
 	}
       cout << endl;                    // Deje un espacio a la hora de mostrar en pantalla.

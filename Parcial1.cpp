@@ -15,7 +15,7 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   
   vector<vector<int> > matriz; // Definimos el vector que se va a convertir en la matriz nxn.
 
-  Matriz(int f, int c);            //Defino la matriz donde sus entradas son f=filas, c=columnas.
+  void Matriz(int f, int c);            //Defino la matriz donde sus entradas son f=filas, c=columnas.
   int analizarvecinos0(int posf,int posc);  //Función entera que analiza los vecinos con valor 0 para una posicion (posf,pos)                                   
   int analizarvecinos1(int posf, int posc); //Función entera que analiza los vecinos con valor 1 para una posicion (posf,posc)
   int analizarvecinos2(int posf, int posc);//Función entera que analiza los vecinos con valor 2 para una posicion (posf,posc)
@@ -23,7 +23,7 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   void ciclo();                    //Definimos una función que hace evolucionar el sistema.
 };
 
-Matriz::Matriz(int f, int c)  // Creamos una instancia de la clase que forme una matriz de números aleatorios.
+void Matriz::Matriz(int f, int c)  // Creamos una instancia de la clase que forme una matriz de números aleatorios.
 {
   filas = f;              // Redefinimos el nombre de las filas.
   columnas = c;           // Redefinimos el nombre de las columnas.
@@ -328,11 +328,13 @@ int main()        // Comienza la función principal
   /*cout << "Ingrese el tamaño de la matriz : " << endl;
   cin >> N;
   */
-  Matriz matriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
-
+  Matriz matriz; // Le da el tamaño a la matriz con el valor que ingresemos.
+matriz.Matriz(N,N);
+	
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
       //matriz.Mostrar();
+	 
 	cout << matriz[N/2][N/2];  
       usleep(100000);
       system("clear");

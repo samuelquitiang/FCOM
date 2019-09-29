@@ -1,6 +1,6 @@
 #include <iostream> //Se incluye libreria para entrada y salida de datos
 #include <vector> //Se incluye libreria para manejo de vectores
-#include <cstdli1#include <unistd.h>
+#include <unistd.h>
 using namespace std; //Esta linea sirve para no tener que llamar cada vez a iostream
 
 class Matriz   //Defino la clase Matriz, que va a ser la encargada de generar la matriz nxn.

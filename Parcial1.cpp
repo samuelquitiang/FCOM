@@ -39,7 +39,7 @@ Matriz::Matriz(int f, int c)  // Creamos una instancia de la clase que forme una
     {
       for (int c=0; c<columnas; c++)   // Hacemos un for sobre las columnas para variar los posibles valores de las posiciones.
 	{
-	  matriz[f][c] = rand()%3      //Agrego un valor aleatorio a cada elemento de la matriz, números aleatorios entre 0 y 2.
+	  matriz[f][c] = rand()%3;      //Agrego un valor aleatorio a cada elemento de la matriz, números aleatorios entre 0 y 2.
 	}
     }
 }
@@ -60,7 +60,7 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 	    }
 	  else                         // Si la célula esta muerta
 	    {
-	      cout << ". "             // Muestre en pantalla "."
+	      cout << ". ";             // Muestre en pantalla "."
 	    }
 	}
       cout << "\n";                    // Deje un espacio a la hora de mostrar en pantalla.

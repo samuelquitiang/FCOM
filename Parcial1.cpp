@@ -15,7 +15,7 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   
   vector<vector<int> > matriz; // Definimos el vector que se va a convertir en la matriz nxn.
 
-  void Matriz(int, int );            //Defino la matriz donde sus entradas son f=filas, c=columnas.
+  void MkMatriz(int, int);            //Defino la matriz donde sus entradas son f=filas, c=columnas.
   int analizarvecinos0(int posf,int posc);  //Función entera que analiza los vecinos con valor 0 para una posicion (posf,pos)                                   
   int analizarvecinos1(int posf, int posc); //Función entera que analiza los vecinos con valor 1 para una posicion (posf,posc)
   int analizarvecinos2(int posf, int posc);//Función entera que analiza los vecinos con valor 2 para una posicion (posf,posc)
@@ -329,7 +329,7 @@ int main()        // Comienza la función principal
   cin >> N;
   */
   Matriz matriz; // Le da el tamaño a la matriz con el valor que ingresemos.
-matriz.Matriz(N,N);
+matriz.MkMatriz(N,N);
 	
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {

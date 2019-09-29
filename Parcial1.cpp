@@ -326,7 +326,7 @@ int main()        // Comienza la función principal
   srand(time(NULL));  // Hace uso del reloj interno del computador para cambiar el valor inicial para generar una secuancia de números
                       // enteros semi-aleatorios.
   int N = 6;
-  */*cout << "Ingrese el tamaño de la matriz : " << endl;
+  /*cout << "Ingrese el tamaño de la matriz : " << endl;
   cin >> N;
   */
   Matriz matriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.

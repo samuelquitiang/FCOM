@@ -55,11 +55,11 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 	    }
 	  else if (matriz[f][c] == 2)       // Si esta viva una célula de la especie 2
 	    {
-	      cout << "# ";            // Muestre en pantalla "#"
+	      cout << " # ";            // Muestre en pantalla "#"
 	    }
 	  else                         // Si la célula esta muerta
 	    {
-	      cout << ". ";             // Muestre en pantalla "."
+	      cout << " . ";             // Muestre en pantalla "."
 	    }
 	}
       cout << "\n";                    // Deje un espacio a la hora de mostrar en pantalla.
@@ -335,7 +335,7 @@ A.MkMatriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
     {
       A.Mostrar();
 	cout << A.matriz[N/2][N/2];  
-      usleep(100000);
+      usleep(100);
       system("clear");
     A.ciclo();
     }

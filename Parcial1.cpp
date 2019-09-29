@@ -273,7 +273,7 @@ void Matriz::ciclo()       // Aquí definimos las reglas estipuladas.
 		  {
 		    nuevo[f][c] = 1;                // Su valor cambia a 1.
 		  }
-		else if(n_vecinos2 == 4 and n_vecinos0 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 0
+		else if(n_vecinos2 == 4 and n_vecinos1 >= 1)  // Condición de que si hay 4 vecinos con valor 2 y 1 o más vecinos con valor 1
 		  {
 		    nuevo[f][c] = 2;                // Su valor cambia a 2.
 		  }

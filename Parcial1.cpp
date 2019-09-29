@@ -334,7 +334,7 @@ A.MkMatriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
       A.Mostrar();
-	cout << matriz[N/2][N/2];  
+	cout << A.matriz[N/2][N/2];  
       usleep(100000);
       system("clear");
     A.ciclo();

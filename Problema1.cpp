@@ -314,7 +314,7 @@ void Matriz::ciclo()       // AquÃ­ definimos las reglas estipuladas.
 			nuevo[i][j] = 0;               // Su valor cambia a 0
 		      }
 		  }
-	      }//cout<<n_vecinos1<<" "<<n_vecinos0<<" "<<n_vecinos2<<endl;
+	      }
 	  }
       }
     matriz = nuevo; //Actualiza la matriz a su nuevo estado 
@@ -337,9 +337,7 @@ A.MkMatriz(N,N); // Le da el tamaÃ±o a la matriz con el valor que ingresemos.
    while(t<= 1000)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuraciÃ³n.
     {
        A.Mostrar();
-	//cout << A.matriz[N/2][N/2];  
-      //usleep(100000);
-	   delay(500);
+      usleep(100000);	
       system("clear");
       A.ciclo();
     t++;

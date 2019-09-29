@@ -69,7 +69,7 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 // Hasta aquí hemos definido la clase que contiene la matriz nxn. En lo que sigue definiremos los métodos que la hacen evolucionar
 // de acuerdo a las reglas estipuladas.
 
-int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.                                 
+int Matriz::analizarvecinos0(int posf,int posc)         // Funcion que analiza si los vecinos tienen valor 0                                
 {
   vecinos0 = 0;               // Para inicializar los vecinos que tengan valor 0.                                                              
   if(posf-1 >=0 and posc-1 >= 0) //Se mira si el vecino que esta en la posicion (posf-1,posc-1) esta dentro de la matriz (existe)
@@ -132,7 +132,7 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los p
 }
 
 
-int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.
+int Matriz::analizarvecinos1(int posf,int posc)         // Funcion entera que analiza si los vecinos tienen valor 1
 {
   vecinos1 = 0;               // Para inicializar los vecinos que tengan valor 1.
   if(posf-1 >=0 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc-1) esta dentro de la matriz (existe)
@@ -146,111 +146,111 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los p
     {
       if(matriz[posf-1][posc] == 1) //Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
   if(posf-1 >= 0 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf-1,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf-1][posc+1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
   if(posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf,posc-1) esta dentro de la matriz (existe)
     {
       if(matriz[posf][posc-1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
   if(posc+1 <= columnas -1)//Se mira si el vecino que esta en la posicion (posf,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf][posc+1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
   if(posf+1 <= filas-1 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf+1,posc-1) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc-1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
   if(posf+1 <= filas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
   if(posf+1 <= filas-1 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc+1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
-	  vecinos1++;
+	  vecinos1++;//Si tiene valor de 1 se añade uno al contador
 	}
     }
   return vecinos1;
 }
 
-int Matriz::analizarvecinos2(int posf, int posc)
+int Matriz::analizarvecinos2(int posf, int posc) //Se define define una funcion entera que analiza si los vecinos tienen valor 2 
 {
   vecinos2 = 0;               // Para inicializar los vecinos que tengan valor 2.                                                              
   if(posf-1 >=0  and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc-1) esta dentro de la matriz (existe)
     {
       if(matriz[posf-1][posc-1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
   if(posf-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc) esta dentro de la matriz (existe)
     {
       if(matriz[posf-1][posc] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
   if(posf-1 >= 0 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf-1,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf-1][posc+1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
 	}
     }
   if(posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf,posc-1) esta dentro de la matriz (existe)
     {
       if(matriz[posf][posc-1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
   if(posc+1 <= columnas -1)//Se mira si el vecino que esta en la posicion (posf,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf][posc+1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
   if(posf+1 <= filas-1 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf+1,posc-1) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc-1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
   if(posf+1 <= filas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
   if(posf+1 <= filas-1 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc+1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
-          vecinos2++;
+          vecinos2++;//Si tiene valor de 2 se añade uno al contador
         }
     }
   return vecinos2;
@@ -333,7 +333,7 @@ int main()        // Comienza la función principal
   while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
       matriz.Mostrar();
-      usleep(100);
+      usleep(100000);
       system("clear");
       matriz.ciclo();
     }

@@ -338,7 +338,8 @@ A.MkMatriz(N,N); // Le da el tamaÃ±o a la matriz con el valor que ingresemos.
     {
        A.Mostrar();
 	//cout << A.matriz[N/2][N/2];  
-      usleep(100000);
+      //usleep(100000);
+	   delay(500);
       system("clear");
       A.ciclo();
     t++;

@@ -16,10 +16,9 @@ public:         // Definimos las cantidades de la clase, que en este caso son p�
   vector<vector<int> > matriz; // Definimos el vector que se va a convertir en la matriz nxn.
 
   Matriz(int f, int c);            //Defino la matriz donde sus entradas son f=filas, c=columnas.
-  int analizarvecinos0(int posf,int posc);  // Definimos una función entera que analiza las posiciones de los vecinos, si estan en
-                                      //filas (posf) y si estan en columnas (posc).
-  int analizarvecinos1(int posf, int posc);
-  int analizarvecinos2(int posf, int posc);
+  int analizarvecinos0(int posf,int posc);  //Función entera que analiza los vecinos con valor 0 para una posicion (posf,pos)                                   
+  int analizarvecinos1(int posf, int posc); //Función entera que analiza los vecinos con valor 1 para una posicion (posf,posc)
+  int analizarvecinos2(int posf, int posc);//Función entera que analiza los vecinos con valor 2 para una posicion (posf,posc)
   void Mostrar();                  //Definimos una función que muestre en pantalla la organización de las células.
   void ciclo();                    //Definimos una función que hace evolucionar el sistema.
 };
@@ -82,49 +81,49 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los p
     }
   if(posf-1 >= 0) //Se mira si el vecino que esta en la posicion (posf-1,posc) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc] == 0)
+      if(matriz[posf-1][posc] == 0) //Se ve si el vecino en esa pocision tiene valor 0
         {
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
   if(posf-1 >= 0 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf-1,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc+1] == 0)
+      if(matriz[posf-1][posc+1] == 0) //Se ve si el vecino en esa pocision tiene valor 0
         {
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
   if(posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf][posc-1] == 0)
+      if(matriz[posf][posc-1] == 0)  //Se ve si el vecino en esa pocision tiene valor 0
         {
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
   if(posc+1 <= columnas -1)//Se mira si el vecino que esta en la posicion (posf,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf][posc+1] == 0)
+      if(matriz[posf][posc+1] == 0) //Se ve si el vecino en esa pocision tiene valor 0
         {
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
    if(posf+1 <= filas-1 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf+1,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc-1] == 0)
+      if(matriz[posf+1][posc-1] == 0) //Se ve si el vecino en esa pocision tiene valor 0
         {
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
   if(posf+1 <= filas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc] == 0)
+      if(matriz[posf+1][posc] == 0) //Se ve si el vecino en esa pocision tiene valor 0
         {
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
   if(posf+1 <= filas-1 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf+1,pos+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc+1] == 0)
+      if(matriz[posf+1][posc+1] == 0) //Se ve si el vecino en esa pocision tiene valor 0
         {
           vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
@@ -136,58 +135,58 @@ int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los p
 int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.
 {
   vecinos1 = 0;               // Para inicializar los vecinos que tengan valor 1.
-  if(posf-1 >=0 and posc-1 >= 0)
+  if(posf-1 >=0 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc-1] == 1)
+      if(matriz[posf-1][posc-1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
     }
-  if(posf-1 >= 0)
+  if(posf-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc] == 1)
+      if(matriz[posf-1][posc] == 1) //Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
     }
-  if(posf-1 >= 0 and posc+1 <= columnas-1)
+  if(posf-1 >= 0 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf-1,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc+1] == 1)
+      if(matriz[posf-1][posc+1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
     }
-  if(posc-1 >= 0)
+  if(posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf][posc-1] == 1)
+      if(matriz[posf][posc-1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
     }
-  if(posc+1 <= columnas -1)
+  if(posc+1 <= columnas -1)//Se mira si el vecino que esta en la posicion (posf,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf][posc+1] == 1)
+      if(matriz[posf][posc+1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
     }
-  if(posf+1 <= filas-1 and posc-1 >= 0)
+  if(posf+1 <= filas-1 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf+1,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc-1] == 1)
+      if(matriz[posf+1][posc-1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
     }
-  if(posf+1 <= filas-1)
+  if(posf+1 <= filas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc] == 1)
+      if(matriz[posf+1][posc] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
     }
-  if(posf+1 <= filas-1 and posc+1 <= columnas-1)
+  if(posf+1 <= filas-1 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc+1] == 1)
+      if(matriz[posf+1][posc+1] == 1)//Se ve si el vecino en esa pocision tiene valor 1
 	{
 	  vecinos1++;
 	}
@@ -198,58 +197,58 @@ int Matriz::analizarvecinos1(int posf,int posc)         // Aquí definimos los p
 int Matriz::analizarvecinos2(int posf, int posc)
 {
   vecinos2 = 0;               // Para inicializar los vecinos que tengan valor 2.                                                              
-  if(posf-1 >=0  and posc-1 >= 0)
+  if(posf-1 >=0  and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc-1] == 2)
+      if(matriz[posf-1][posc-1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
         }
     }
-  if(posf-1 >= 0)
+  if(posf-1 >= 0)//Se mira si el vecino que esta en la posicion (posf-1,posc) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc] == 2)
+      if(matriz[posf-1][posc] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
         }
     }
-  if(posf-1 >= 0 and posc+1 <= columnas-1)
+  if(posf-1 >= 0 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf-1,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc+1] == 2)
+      if(matriz[posf-1][posc+1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
 	}
     }
-  if(posc-1 >= 0)
+  if(posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf][posc-1] == 2)
+      if(matriz[posf][posc-1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
         }
     }
-  if(posc+1 <= columnas -1)
+  if(posc+1 <= columnas -1)//Se mira si el vecino que esta en la posicion (posf,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf][posc+1] == 2)
+      if(matriz[posf][posc+1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
         }
     }
-  if(posf+1 <= filas-1 and posc-1 >= 0)
+  if(posf+1 <= filas-1 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf+1,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc-1] == 2)
+      if(matriz[posf+1][posc-1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
         }
     }
-  if(posf+1 <= filas-1)
+  if(posf+1 <= filas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc] == 2)
+      if(matriz[posf+1][posc] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
         }
     }
-  if(posf+1 <= filas-1 and posc+1 <= columnas-1)
+  if(posf+1 <= filas-1 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc+1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf+1][posc+1] == 2)
+      if(matriz[posf+1][posc+1] == 2)//Se ve si el vecino en esa pocision tiene valor 2
         {
           vecinos2++;
         }

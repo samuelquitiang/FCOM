@@ -1,7 +1,6 @@
 #include <iostream> //Se incluye libreria para entrada y salida de datos
 #include <vector> //Se incluye libreria para manejo de vectores
-#include <cstdlib>
-#include <unistd.h>
+#include <cstdli1#include <unistd.h>
 using namespace std; //Esta linea sirve para no tener que llamar cada vez a iostream
 
 class Matriz   //Defino la clase Matriz, que va a ser la encargada de generar la matriz nxn.
@@ -338,7 +337,7 @@ A.MkMatriz(N,N); // Le da el tamaÃ±o a la matriz con el valor que ingresemos.
     {
        A.Mostrar();
       //usleep(1000000);
-	   sleep(0.7);
+	   sleep(1);
       system("clear");
       A.ciclo();
     t++;

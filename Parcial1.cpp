@@ -337,7 +337,7 @@ A.MkMatriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
 	//cout << A.matriz[N/2][N/2];  
       usleep(100);
       system("clear");
-    A.ciclo();
+    //A.ciclo();
     }
 
 }

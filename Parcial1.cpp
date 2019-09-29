@@ -1,8 +1,8 @@
-#include <iostream>
-#include <vector>
+#include <iostream> //Se incluye libreria para entrada y salida de datos
+#include <vector> //Se incluye libreria para manejo de vectores
 #include <cstdlib>
 #include <unistd.h>
-using namespace std;
+using namespace std; //Esta linea sirve para no tener que llamar cada vez a iostream
 
 class Matriz   //Defino la clase Matriz, que va a ser la encargada de generar la matriz nxn.
 {
@@ -72,61 +72,61 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 
 int Matriz::analizarvecinos0(int posf,int posc)         // Aquí definimos los posibles valores de los vecinos.                                 
 {
-  vecinos0 = 0;               // Para inicializar los vecinos que tengan valor 1.                                                              
-  if(posf-1 >=0 and posc-1 >= 0)
+  vecinos0 = 0;               // Para inicializar los vecinos que tengan valor 0.                                                              
+  if(posf-1 >=0 and posc-1 >= 0) //Se mira si el vecino que esta en la posicion (posf-1,posc-1) esta dentro de la matriz (existe)
     {
-      if(matriz[posf-1][posc-1] == 0)
+      if(matriz[posf-1][posc-1] == 0) //Se ve si el vecino en esa pocision tiene valor 0
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-  if(posf-1 >= 0)
+  if(posf-1 >= 0) //Se mira si el vecino que esta en la posicion (posf-1,posc) esta dentro de la matriz (existe)
     {
       if(matriz[posf-1][posc] == 0)
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-  if(posf-1 >= 0 and posc+1 <= columnas-1)
+  if(posf-1 >= 0 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf-1,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf-1][posc+1] == 0)
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-  if(posc-1 >= 0)
+  if(posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf,posc-1) esta dentro de la matriz (existe)
     {
       if(matriz[posf][posc-1] == 0)
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-  if(posc+1 <= columnas -1)
+  if(posc+1 <= columnas -1)//Se mira si el vecino que esta en la posicion (posf,posc+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf][posc+1] == 0)
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-   if(posf+1 <= filas-1 and posc-1 >= 0)
+   if(posf+1 <= filas-1 and posc-1 >= 0)//Se mira si el vecino que esta en la posicion (posf+1,posc-1) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc-1] == 0)
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-  if(posf+1 <= filas-1)
+  if(posf+1 <= filas-1)//Se mira si el vecino que esta en la posicion (posf+1,posc) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc] == 0)
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
-  if(posf+1 <= filas-1 and posc+1 <= columnas-1)
+  if(posf+1 <= filas-1 and posc+1 <= columnas-1)//Se mira si el vecino que esta en la posicion (posf+1,pos+1) esta dentro de la matriz (existe)
     {
       if(matriz[posf+1][posc+1] == 0)
         {
-          vecinos0++;
+          vecinos0++; //Si tiene valor de 0 se añade uno al contador
         }
     }
   return vecinos0;
@@ -325,16 +325,16 @@ int main()        // Comienza la función principal
 {
   srand(time(NULL));  // Hace uso del reloj interno del computador para cambiar el valor inicial para generar una secuancia de números
                       // enteros semi-aleatorios.
-  int N;
-  cout << "Ingrese el tamaño de la matriz : " << endl;
-  cin >> N;
+  int N=8;
+  /*cout << "Ingrese el tamaño de la matriz : " << endl;
+  cin >> N;*/
   
   Matriz matriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
 
   while(1)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
       matriz.Mostrar();
-      usleep(10);
+      usleep(100);
       system("clear");
       matriz.ciclo();
     }

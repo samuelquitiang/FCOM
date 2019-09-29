@@ -52,7 +52,7 @@ void Matriz::Mostrar()                 // Creamos una instancia de la clase que 
 	{
 	  if (matriz[f][c] == 1)       // Si esta viva una célula de la especie 1
 	    {
-	      cout << "* ";            // Muestre en pantalla "*"
+	      cout << "*";            // Muestre en pantalla "*"
 	    }
 	  else if (matriz[f][c] == 2)       // Si esta viva una célula de la especie 2
 	    {
@@ -325,17 +325,17 @@ int main()        // Comienza la función principal
 {
   srand(time(NULL));  // Hace uso del reloj interno del computador para cambiar el valor inicial para generar una secuancia de números
                       // enteros semi-aleatorios.
-  int N=8;
-  /*cout << "Ingrese el tamaño de la matriz : " << endl;
-  cin >> N;*/
+  int N;
+  cout << "Ingrese el tamaño de la matriz : " << endl;
+  cin >> N;
   
   Matriz matriz(N,N); // Le da el tamaño a la matriz con el valor que ingresemos.
 
-  while(1)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
+  while(true)  //Siempre que dibuje la matriz, espera un tiempo, borra y dibuja una nueva configuración.
     {
       matriz.Mostrar();
       usleep(100);
-      system("clear");
+      system("cls");
       matriz.ciclo();
     }
 
